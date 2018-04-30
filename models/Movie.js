@@ -7,7 +7,7 @@ const MovieSchema = new Schema({
         minlength : 5,
         required : true
     },
-    user : {
+    username : {
         type : String,
         required : true
     }

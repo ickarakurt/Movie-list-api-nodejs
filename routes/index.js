@@ -42,7 +42,7 @@ router.post('/register', function(req, res, next) {
         const userAdd = new User({
             username : username,
             password : hash
-        })
+        });
 
         userAdd.save((err,data)=>{
             if(err){
