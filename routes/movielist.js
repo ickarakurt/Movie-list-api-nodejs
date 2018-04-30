@@ -1,15 +1,21 @@
 const express = require('express');
 const router = express.Router();
-const jwt = require('jsonwebtoken');
-const bcrypt = require('bcrypt');
-const User = require('../models/User');
+const Movie = require('../models/Movie');
 const app = express();
-app.set('api_secret_key',process.env.api_secret_key);
 
+    
 
-router.get('/', function(req, res, next) {
-    res.json({data : "hoşgeldin"});
+router.post('/', function(req, res) {
+    Movie.find({},'title',(err,data)=>{
+       res.json(data);
+    });
 });
+        
 
+router.post('/add',(req,res)=>{
+    const name = req.name;
+    console.log(name + username);
+    const username = "cem";
+});
 
 module.exports = router;

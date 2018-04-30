@@ -16,15 +16,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 
-app.use('/movie',verifyToken);
+//app.use('/movie',verifyToken);
 app.use('/movie',movieRouter);
 app.use('/', indexRouter);
-
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
-});
-
 
 
 module.exports = app;
