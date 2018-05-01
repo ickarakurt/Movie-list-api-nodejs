@@ -7,9 +7,17 @@ const MovieSchema = new Schema({
         minlength : 5,
         required : true
     },
+    category : {
+        type : String,
+        minlength : 3,
+    },
     username : {
         type : String,
         required : true
+    },
+    date : {
+        type : Date,
+        default : Date.now
     }
 
 });
