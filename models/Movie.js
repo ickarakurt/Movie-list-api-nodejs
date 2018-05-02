@@ -5,7 +5,10 @@ const MovieSchema = new Schema({
     title : {
         type : String,
         minlength : 5,
-        required : true
+        required : true,
+        index : {
+            unique : true,
+        }
     },
     category : {
         type : String,

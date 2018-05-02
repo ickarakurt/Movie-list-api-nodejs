@@ -13,25 +13,31 @@ router.get('/', function(req, res, next) {
 
 
 router.post('/login/', function(req, res, next) {
-    const {username , password } = req.body;    
-    User.findOne({ username : username }, (err, data) => {
-        bcrypt.compare(password, data.password, function(err, answer) {
-            if(answer == true){
-               
-               const payload = {
-                username
-            };
-            const token = jwt.sign(payload,app.get('api_secret_key'),{
-                expiresIn : 720
-            });
-            res.json({status : true , token });
+    const {username , password } = req.body;  
+    if(password && username){  
+        User.findOne({ username : username }, (err, data) => {
+            if(data){
+                bcrypt.compare(password, data.password, function(err, answer) {
+                    if(answer == true){
+                    
+                    const payload = {
+                        username
+                    };
+                    const token = jwt.sign(payload,app.get('api_secret_key'),{
+                        expiresIn : '365d'
+                    });
+                    res.json({status : true , token });
 
+                    }else{
+                        res.json({error : "wrong username or password"})
+                    }
+                });
             }else{
-                res.json({error : "wrong username or password"})
+                res.json({error : "data cant find"});
             }
-        });
-       
-        });
+        });}else{
+            res.json({ error : "data error"});
+        }
     
 });
 

@@ -6,13 +6,13 @@ const Movie = require('../models/Movie');
 
 router.get('/', function(req, res) {
     const username = req.decode.username;
-    Movie.find({ username : username },'title category',(err,data)=>{
+    Movie.find({ username : username },'title category date',(err,data)=>{
        res.json(data);
     });
 });
 
 
-
+1
 
 router.post('/add',(req,res)=>{
 
@@ -22,7 +22,7 @@ router.post('/add',(req,res)=>{
         title : title,
         category : category,
         username : username
-    });
+    }); 
 
     movieAdd.save((err)=>{
         if(err){
@@ -61,7 +61,6 @@ router.get('/2', function(req, res) {
     }).sort({title : -1});
 });
 
-// a to z title
 router.get('/category', function(req, res) {
     const username = req.decode.username;
     Movie.find({ username : username , category : {$exists : true}},'title category',(err,data)=>{
@@ -69,7 +68,7 @@ router.get('/category', function(req, res) {
     });
 });
 
-// a to z categpry
+// a to z category
 router.get('/category/1', function(req, res) {
     const username = req.decode.username;
     Movie.find({ username : username , category : {$exists : true}},'title category',(err,data)=>{
@@ -78,7 +77,7 @@ router.get('/category/1', function(req, res) {
 });
 
 
-// z to a categpry
+// z to a category
 router.get('/category/-1', function(req, res) {
     const username = req.decode.username;
     Movie.find({ username : username , category : {$exists : true}},'title category',(err,data)=>{
@@ -87,7 +86,7 @@ router.get('/category/-1', function(req, res) {
 });
 
 
-
+// category list
 router.get('/:category', function(req, res) {
     const username  = req.decode.username;
     const category = req.params.category;
