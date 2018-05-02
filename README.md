@@ -12,13 +12,12 @@ Users can create and manage their own movie list.
 | --- | --- | --- | --- |
 | /api/movies | `GET` | Empty | List all movies. |
 | /api/movies/add | `POST` | {'title':'foo', 'category':'bar',}  | Add a new movie. |
-| /api/movies/delete | `DELETE` | {'title':'foo' } | Add a new movie. |
+| /api/movies/delete | `DELETE` | {'title':'foo' } | Remove a movie. |
 | /api/movies/1 | `GET` | Empty | A to Z movies |
 | /api/movies/-1 | `GET` | Empty | Z to A movies |
 | /api/movies/:category | `GET` | Empty | search for specific category |
 | /api/movies/category | `GET` | Empty | movies which exist category |
 | /api/movies/category/1 | `GET` | Empty | A to Z movies which exist category |
-
 | /api/movies/category/-1 | `GET` | Empty | Z to A movies which exist category |
 
 
