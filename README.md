@@ -1,6 +1,6 @@
-### Movie List api with express,mongodb
+# Movie List api with express,mongodb
 Users can create and manage their own movie list.
-# Index
+### Index
 
 | Route | HTTP Verb	 | POST body	 | Description	 |
 | --- | --- | --- | --- |
