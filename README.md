@@ -10,15 +10,15 @@ Users can create and manage their own movie list.
 
 | Route | HTTP Verb	 | POST body	 | Description	 |
 | --- | --- | --- | --- |
-| /api/movies | `GET` | Empty | List all movies. |
-| /api/movies/add | `POST` | {'title':'foo', 'category':'bar',}  | Add a new movie. |
-| /api/movies/delete | `DELETE` | {'title':'foo' } | Remove a movie. |
-| /api/movies/1 | `GET` | Empty | A to Z movies |
-| /api/movies/-1 | `GET` | Empty | Z to A movies |
-| /api/movies/:category | `GET` | Empty | search for specific category |
-| /api/movies/category | `GET` | Empty | movies which exist category |
-| /api/movies/category/1 | `GET` | Empty | A to Z movies which exist category |
-| /api/movies/category/-1 | `GET` | Empty | Z to A movies which exist category |
+| /movie | `GET` | Empty | List all movies. |
+| /movie/add | `POST` | {'title':'foo', 'category':'bar',}  | Add a new movie. |
+| /movie/delete | `DELETE` | {'title':'foo' } | Remove a movie. |
+| /movie/1 | `GET` | Empty | A to Z movies |
+| /movie/-1 | `GET` | Empty | Z to A movies |
+| /movie/:category | `GET` | Empty | search for specific category |
+| /movie/category | `GET` | Empty | movies which exist category |
+| /movie/category/1 | `GET` | Empty | A to Z movies which exist category |
+| /movie/category/-1 | `GET` | Empty | Z to A movies which exist category |
 
 
 
